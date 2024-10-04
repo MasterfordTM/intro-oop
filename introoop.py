@@ -1,3 +1,4 @@
+
 class Persona:
     def __init__(self, nombre, edad, genero):
         self.nombre = nombre
@@ -5,10 +6,10 @@ class Persona:
         self.genero = genero
 
     def presentarse(self):
-        print(f"Hola, perro infiel  mi nombre es  {self.nombre}, tengo {self.edad} años y soy {self.genero}.")
+        print(f"Hola, mi nombre es {self.nombre}, tengo {self.edad} años y soy {self.genero}.")
 
-    def pasarsaludo(self, sal , lol ):
-        print(f"oooo oli,{self.nombre}")
+    def saludar_a(self, otra_persona):
+        print(f"{self.nombre}: ¡Hola, {otra_persona.nombre}! ¿Cómo estás?")
 
     def cumplir_anios(self):
         self.edad += 1
@@ -24,17 +25,18 @@ class Persona:
     def detalles(self):
         print(f"Nombre: {self.nombre}, Edad: {self.edad}, Género: {self.genero}")
 
-# Creando una instancia de la clase Persona
+# Creando instancias de la clase Persona
 persona1 = Persona("Juan", 25, "masculino")
-persona2 = Persona("vitor",10,"hombre")
-persona3 = Persona("brenda",21 ,"femenino")
+persona2 = Persona("Victor", 10, "masculino")
+persona3 = Persona("Brenda", 21, "femenino")
 
-# Usando los métodos de la instancia
-persona1.presentarse()         # Salida: Hola, soy Juan, tengo 25 años y soy masculino.
+# Usando los métodos de las instancias
+persona1.presentarse()         # Salida: Hola, mi nombre es Juan, tengo 25 años y soy masculino.
 persona1.cumplir_anios()       # Salida: Juan ahora tiene 26 años.
 persona1.cambiar_nombre("Carlos")  # Salida: Mi nuevo nombre es Carlos.
-persona2.presentarse()
-persona1.pasarsaludo("victor","brenda")
+persona2.presentarse()         # Salida: Hola, mi nombre es Victor, tengo 10 años y soy masculino.
+persona1.saludar_a(persona2)
 persona3.presentarse()
-print(persona1.es_mayor_de_edad())  # Salida: True
-persona1.detalles()            # Salida: Nombre: Carlos, Edad: 26, Género: masculino
+persona2.saludar_a(persona3)
+print(persona1.es_mayor_de_edad())
+persona1.detalles()
